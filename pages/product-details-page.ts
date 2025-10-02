@@ -7,8 +7,10 @@ export class ProductDetailsPage {
     readonly productPrice: Locator;
     readonly productImage: Locator;
     readonly addToCartButton: Locator;
+    readonly removeButton: Locator;
     readonly backButton: Locator;
     readonly pageTitle: Locator;
+    readonly cartBadge: Locator;
     readonly title: RegExp;
     readonly url: RegExp;
 
@@ -23,6 +25,8 @@ export class ProductDetailsPage {
         this.addToCartButton = page.locator('button[data-test^="add-to-cart"]');
         this.backButton = page.locator('button[data-test="back-to-products"]');
         this.pageTitle = page.locator('span.title');
+        this.removeButton = page.locator('button[data-test^="remove"]');
+        this.cartBadge = page.locator('.shopping_cart_badge');
     }
 
     async assertProductName(expected: string) {
